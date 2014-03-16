@@ -1,0 +1,2 @@
+firstname|lastname|address|01/11/1990||900000000|email@ist.utl.pt
+pessoa2|surname-da-pessoa|moradita da pessoa|01/11/1990|210000000|900000000|email@ist.utl.pt
