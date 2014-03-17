@@ -8,8 +8,12 @@ public class Application {
 	 */
 	public static void main(String args[]) {
 		
-		String inputFileName = args[0]; //"textfile.txt";
-		String outputFileName = args[1]; //"output.txt";
+	//	String inputFileName = args[0]; //"textfile.txt";
+	//	String outputFileName = args[1]; //"output.txt";
+		
+		String inputFileName = "media/mdl_user_min.csv";
+		String outputFileName = "media/output.txt";
+		
 		
 		if(inputFileName == null || outputFileName == null)
 			return; 

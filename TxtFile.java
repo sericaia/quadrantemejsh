@@ -5,6 +5,8 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import java.util.Collections;
+
 public class TxtFile extends Writer {
 
 	public TxtFile(String fileName, ArrayList<Person> personList) {
@@ -16,9 +18,12 @@ public class TxtFile extends Writer {
 		BufferedWriter writer = null;
 
 		try {
+			//criate buffer
 			writer = new BufferedWriter(new OutputStreamWriter(
 					new FileOutputStream(this.fileName), "utf-8"));
 
+			//sort list of persons
+			Collections.sort(this.personList, Person.Comparators.ADDRESSANDNAME);
 			
 			for (Iterator<Person> i = this.personList.iterator(); i.hasNext();) {
 				Person person = i.next();

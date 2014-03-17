@@ -1,7 +1,9 @@
+import java.util.Comparator;
+
 /*
  * Person information
  */
-public class Person {
+public class Person implements Comparable<Person> {
 	public String 	firstName;
 	public String 	lastName;
 	public String	address;
@@ -25,6 +27,38 @@ public class Person {
 	
 	//compare function :: lets sort by name and address (city)
 	//TODO
+	@Override
+	public int compareTo(Person p) {
+		return Comparators.ADDRESS.compare(this, p);
+	}
+	
+	//class that compares person information
+	public static class Comparators {
+
+        public static Comparator<Person> NAME = new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.firstName.compareTo(o2.firstName);
+            }
+        };
+        public static Comparator<Person> ADDRESS = new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.address.compareTo(o2.address);
+            }
+        };
+        //address priority
+        public static Comparator<Person> ADDRESSANDNAME = new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                int i = o1.address.compareTo(o2.address);
+                if (i == 0) {
+                    i = o1.firstName.compareTo(o2.firstName);
+                }
+                return i;
+            }
+        };
+    }
 	
 	//taditional getters and setters
 	public String getFirstName() {
@@ -71,6 +105,8 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
 	
 	
 }
