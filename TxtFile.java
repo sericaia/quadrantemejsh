@@ -19,14 +19,14 @@ public class TxtFile extends Writer {
 			writer = new BufferedWriter(new OutputStreamWriter(
 					new FileOutputStream(this.fileName), "utf-8"));
 
+			
 			for (Iterator<Person> i = this.personList.iterator(); i.hasNext();) {
 				Person person = i.next();
 				writer.write(
 						"Nome: " + person.getFirstName() + " " + person.getLastName() + "\r\n"
 						+ "Morada: " + person.getAddress() + "\r\n"
 						+ "Data de Nascimento: " + person.getBirthDate() + "\r\n"
-						+ "Tlf.: " + person.getTelNumber() + "\r\n"
-						+ "Tlm.: " + person.getMobileNumber() + "\r\n"
+						+ "Tlm.: " + person.getMobileNumber() + " | " + person.getAltMobileNumber() + "\r\n"
 						+ "E-mail: " + person.getEmail() + "\r\n"
 						+ "\r\n");
 			}

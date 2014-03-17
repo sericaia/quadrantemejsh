@@ -2,10 +2,14 @@ import java.util.ArrayList;
 
 public class Application {
 
+	/*
+	 * java -classpath . Application <input-file> <output-file>
+	 * Two arguments <input-file>, <output-file>
+	 */
 	public static void main(String args[]) {
 		
-		String inputFileName = "textfile.txt";//args[1];
-		String outputFileName = "output.txt";//args[2];
+		String inputFileName = args[0]; //"textfile.txt";
+		String outputFileName = args[1]; //"output.txt";
 		
 		if(inputFileName == null || outputFileName == null)
 			return; 
