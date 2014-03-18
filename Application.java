@@ -11,6 +11,7 @@ public class Application {
 	//	String inputFileName = args[0]; //"textfile.txt";
 	//	String outputFileName = args[1]; //"output.txt";
 		
+		//DEBUG mode
 		String inputFileName = "media/mdl_user_min.csv";
 		String outputFileName = "media/output.txt";
 		
