@@ -13,7 +13,7 @@ public class Application {
 		
 		//DEBUG mode
 		String inputFileName = "media/mdl_user_min.csv";
-		String outputFileName = "media/output.txt";
+		String outputFileName = "media/output.tex";//"media/output.txt";
 		
 		
 		if(inputFileName == null || outputFileName == null)
@@ -24,10 +24,12 @@ public class Application {
 			ArrayList<Person> personList = FileReader.getInputData(inputFileName);
 			
 			//create writer element
-			TxtFile txtf = new TxtFile(outputFileName, personList);
-			
+		//	TxtFile txtf = new TxtFile(outputFileName, personList);
+			LatexFile texf = new LatexFile(outputFileName, personList);
+						
 			//write to txt file
-			txtf.writeToFile();		
+		//	txtf.writeToFile();	
+			texf.writeToFile();		
 			
 		} catch (Exception e) {// Catch exception if any
 			System.err.println("Error: " + e.getMessage());
